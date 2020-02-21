@@ -1,0 +1,64 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - wellness_check
+  - condition_better
+  - condition_worse
+  - condition_same
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_condition_same
+- utter_condition_improved
+- utter_condition_worsened
+- action_wellness_q
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_condition_improved:
+  - custom:
+      condition: post_condition_improved
+      text: "Great, we are glad to hear it."
+
+  utter_condition_same:
+  - text: "Ok - thanks for letting us know."
+  - custom:
+        condition: post_condition_same
+
+  utter_condition_worsened:
+  - text: "Sorry to heat that. That's a pity!"
+  - custom:
+        condition: post_condition_worsened
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
