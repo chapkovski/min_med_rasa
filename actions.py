@@ -14,8 +14,11 @@ class ActionHelloWorld(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        reason = next(tracker.get_latest_entity_values("result"), None)
+        print("TRACKER", tracker.latest_message)
+        reason = next(tracker.get_latest_entity_values("reason"), None)
+        print("REASON!!!", reason)
         reason_desc = reasons.get(reason)
+        print("REASON DESC", reason_desc)
         if reason:
             if reason_desc:
                 resp = f' Hey, we just wanted to touch base with you because {reason_desc}'

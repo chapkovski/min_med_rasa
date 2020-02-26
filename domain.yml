@@ -23,6 +23,9 @@ actions:
 - utter_condition_worsened
 - action_wellness_q
 
+entities:
+- reason
+
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -47,16 +50,19 @@ responses:
   - custom:
       condition: post_condition_improved
       text: "Great, we are glad to hear it."
+      status: over
 
   utter_condition_same:
-  - text: "Ok - thanks for letting us know."
   - custom:
         condition: post_condition_same
+        text: "Ok - thanks for letting us know."
+        status: over
 
   utter_condition_worsened:
-  - text: "Sorry to heat that. That's a pity!"
   - custom:
         condition: post_condition_worsened
+        text: "Sorry to heat that. That's a pity!"
+        status: over
 
 
 session_config:

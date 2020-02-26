@@ -72,3 +72,4 @@
 - much better
 - I am feeling better, thank you
 - In general I feel better now
+- I feel better
